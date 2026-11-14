@@ -1,0 +1,8 @@
+[Unit]
+Description=Generate ten unique ReelsRedditVideos every hour
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Desktop/ReelsRedditVideos
+ExecStart=%h/.local/bin/uv run --script generate_videos.py --count 10
+Environment=PYTHONUNBUFFERED=1
+TimeoutStartSec=6h
